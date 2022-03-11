@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Repaso2
 {
-    public partial class Datosalquiler : Form
+    public partial class FormCliente : Form
     {
-        public Datosalquiler()
+        public FormCliente()
         {
             InitializeComponent();
         }
