@@ -15,20 +15,25 @@ namespace Repaso2
         List<Vehiculo> vehiculos = new List<Vehiculo>();
         List <Cliente> clientes = new List<Cliente>();
         List <Alquiler>alquileres = new List<Alquiler>();
-        List <Mostrar> datos = new List<Mostrar>();
+        List <Mostrar> resumen = new List<Mostrar>();
         public FormAlquiler()
         {
             InitializeComponent();
         }
         private void FormAlquiler_Load(object sender, EventArgs e)
         {
+            CargarClientes();
             CargarVehiculos();
             dataGridView1.DataSource = vehiculos;
             dataGridView1.Refresh();
-
-            CargarClientes();
+            CargarAlquileres();
+            dataGridView3.DataSource = alquileres;
+            dataGridView3.Refresh();
             dataGridView2.DataSource = clientes;
             dataGridView2.Refresh();
+            
+
+
         }
         private void CargarVehiculos()
         {
@@ -44,6 +49,7 @@ namespace Repaso2
                 vehiculo.precioKilometro = Convert.ToDecimal(reader.ReadLine());
                 vehiculos.Add(vehiculo);
             }
+            reader.Close();
         }
         private void CargarClientes()
         {
@@ -57,6 +63,7 @@ namespace Repaso2
                 cliente.direccion = reader.ReadLine();
                 clientes.Add(cliente);
             }
+            reader.Close();
         }
         private void CargarAlquileres()
         {
@@ -67,16 +74,15 @@ namespace Repaso2
                 Alquiler alquiler = new Alquiler();
                 alquiler.nit = reader.ReadLine();
                 alquiler.placa = reader.ReadLine();
-              //  alquiler.fechaAlquiler = reader.ReadLine();
-               // alquiler.fechaDevolucion = Convert.ToString(reader.ReadLine());
-               // alquiler.kilometros = Convert.ToInt16(reader.ReadLine());
+                alquiler.fechaAlquiler =Convert.ToDateTime(reader.ReadLine());
+                alquiler.fechaDevolucion = Convert.ToDateTime(reader.ReadLine());
+                alquiler.kilometros = Convert.ToInt16(reader.ReadLine());
                 alquileres.Add(alquiler);
             }
+            reader.Close();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            CargarAlquileres();
             for (int i = 0; i < alquileres.Count; i++ )
             {
                 Mostrar dato = new Mostrar();
@@ -85,6 +91,7 @@ namespace Repaso2
                     if (alquileres[i].nit == clientes[j].nit)
                     {
                         dato.nombre = clientes[j].nombre;
+                        dato.fechaDevolucion = alquileres[i].fechaDevolucion;
                     }
                 }
                 for (int k = 0; k < vehiculos.Count; k++)
@@ -96,10 +103,10 @@ namespace Repaso2
                         dato.total = vehiculos[k].precioKilometro * alquileres[i].kilometros;
                     }
                 }
-                datos.Add(dato);
+                resumen.Add(dato);
             }
-            dataGridView3.DataSource = datos;
-            dataGridView3.Refresh();
+            dataGridViewResumen.DataSource = resumen;
+            dataGridViewResumen.Refresh();
         }
 
        

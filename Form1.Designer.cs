@@ -32,7 +32,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.datosVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datosClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datosAlquilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -49,7 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.datosClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
@@ -65,8 +66,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
-            this.datosVehículosToolStripMenuItem,
-            this.datosClienteToolStripMenuItem});
+            this.datosClienteToolStripMenuItem,
+            this.datosAlquilerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(604, 24);
@@ -77,16 +78,23 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.clientesToolStripMenuItem.Text = "Datos Alquiler";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
+            this.clientesToolStripMenuItem.Text = "Resumen Alquiler";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
-            // datosVehículosToolStripMenuItem
+            // datosClienteToolStripMenuItem
             // 
-            this.datosVehículosToolStripMenuItem.Name = "datosVehículosToolStripMenuItem";
-            this.datosVehículosToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.datosVehículosToolStripMenuItem.Text = "Datos Vehículos";
-            this.datosVehículosToolStripMenuItem.Click += new System.EventHandler(this.datosVehículosToolStripMenuItem_Click);
+            this.datosClienteToolStripMenuItem.Name = "datosClienteToolStripMenuItem";
+            this.datosClienteToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.datosClienteToolStripMenuItem.Text = "Cliente";
+            this.datosClienteToolStripMenuItem.Click += new System.EventHandler(this.datosClienteToolStripMenuItem_Click);
+            // 
+            // datosAlquilerToolStripMenuItem
+            // 
+            this.datosAlquilerToolStripMenuItem.Name = "datosAlquilerToolStripMenuItem";
+            this.datosAlquilerToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.datosAlquilerToolStripMenuItem.Text = "Alquiler";
+            this.datosAlquilerToolStripMenuItem.Click += new System.EventHandler(this.datosAlquilerToolStripMenuItem_Click);
             // 
             // contextMenuStrip2
             // 
@@ -151,12 +159,15 @@
             // 
             // buttonIngresar
             // 
+            this.buttonIngresar.BackColor = System.Drawing.Color.Tomato;
+            this.buttonIngresar.Font = new System.Drawing.Font("SansSerif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonIngresar.ForeColor = System.Drawing.Color.White;
             this.buttonIngresar.Location = new System.Drawing.Point(144, 285);
             this.buttonIngresar.Name = "buttonIngresar";
             this.buttonIngresar.Size = new System.Drawing.Size(100, 30);
             this.buttonIngresar.TabIndex = 8;
             this.buttonIngresar.Text = "Ingresar datos";
-            this.buttonIngresar.UseVisualStyleBackColor = true;
+            this.buttonIngresar.UseVisualStyleBackColor = false;
             this.buttonIngresar.Click += new System.EventHandler(this.buttonIngresar_Click);
             // 
             // label1
@@ -212,24 +223,29 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Repaso2.Properties.Resources.Silverado_Color_Roja_1;
-            this.pictureBox1.Location = new System.Drawing.Point(266, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(266, 62);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(317, 274);
+            this.pictureBox1.Size = new System.Drawing.Size(317, 253);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // datosClienteToolStripMenuItem
+            // label6
             // 
-            this.datosClienteToolStripMenuItem.Name = "datosClienteToolStripMenuItem";
-            this.datosClienteToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
-            this.datosClienteToolStripMenuItem.Text = "Datos Cliente";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("SansSerif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(226, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 19);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Datos Vehículo";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 344);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -265,7 +281,6 @@
        private ToolStripMenuItem clientesToolStripMenuItem1;
         private ContextMenuStrip contextMenuStrip3;
         private ToolStripMenuItem clientesToolStripMenuItem2;
-        private ToolStripMenuItem datosVehículosToolStripMenuItem;
         private TextBox textBoxplaca;
         private TextBox textBoxmarca;
         private TextBox textBoxmodelo;
@@ -279,5 +294,7 @@
         private Label label5;
         private PictureBox pictureBox1;
         private ToolStripMenuItem datosClienteToolStripMenuItem;
+        private ToolStripMenuItem datosAlquilerToolStripMenuItem;
+        private Label label6;
     }
 }

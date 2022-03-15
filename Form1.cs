@@ -55,10 +55,24 @@ namespace Repaso2
             {
                 MessageBox.Show("EL VEHÍCULO YA ESTA INGRESADO.");
             }
-
+            textBoxplaca.Clear();
+            textBoxmarca.Clear();
+            textBoxmodelo.Clear();
+            textBoxcolor.Clear();
+            textBoxprecio.Clear();
 
         }
 
-       
+        private void datosClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCliente formularioCliente = new FormCliente();
+            formularioCliente.Show();
+        }
+
+        private void datosAlquilerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormIngresoAlquiler formularioAlquiler = new FormIngresoAlquiler();
+            formularioAlquiler.Show();
+        }
     }
 }
